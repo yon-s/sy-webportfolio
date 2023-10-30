@@ -1,0 +1,34 @@
+//ブレイクポイント
+$breakPointList: 375px, 767px, 820px,1023px,1365px;
+
+//メディアクエリ
+$mq: (
+  'sp-min': 'screen and (max-width: #{nth($breakPointList, 1)})',
+  'sp': 'screen and (max-width: #{nth($breakPointList, 2)})',
+  'tab-min': 'screen and (max-width: #{nth($breakPointList, 3)})',
+  'tab-mid': 'screen and (max-width: #{nth($breakPointList, 4)})',
+  'tab-sp': 'screen and (max-width: #{nth($breakPointList, 5)})',
+  'tab': 'screen and (min-width: #{nth($breakPointList, 4) + 1})',
+  'pc': 'print,screen and (min-width: #{nth($breakPointList, 5) + 1} )'
+) !default;
+
+//画像格納ディレクトリ
+$imgDir: '../img/';
+
+//PCレイアウト時の最小横幅
+$minPcContentWidth: 1000px;
+$maxPcContentWidth: 1536px;
+
+//サイトで使用するカラー
+$colors: #121F2C, #E4EAF3, #F1F5F8, #4977B1,#FEFEFE, #B5B5B5, #CB4D35, #616161, #F8F8F8;
+//SNSのカラー
+$snscolors:#1877F2, #1877F2, #2988D0,#00B900, #DE3E53, #0E212F;
+
+//左右のパディング
+$side_pading_mid:64px;
+$side_pading_large: 56px;
+$main_index_paddingl:15.66vw,6.25vw,5.33vw;//$main_indexのpadding-right
+$main_index_paddingr:8.05vw,6.25vw,5.33vw;//$main_indexのpadding-right
+
+//ttl-groupの下(PC,TAB,SP)
+$ttlBottmList: 80px,60px,40px;

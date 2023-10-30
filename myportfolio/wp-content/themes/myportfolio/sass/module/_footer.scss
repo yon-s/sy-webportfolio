@@ -1,0 +1,16 @@
+.footer{
+  text-align: center;
+  padding: 44px 0;
+  background-color: #{nth($colors, 1)};
+  color: #{nth($colors, 5)};
+  margin-top: auto;
+  &__copy-right{
+    font-size: rem(14);
+    margin: 0;
+  }
+}
+@include mq(tab-mid){
+  .footer{
+    padding: 28px 0;
+  }
+}

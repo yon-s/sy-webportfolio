@@ -1,0 +1,178 @@
+.header{
+  &__site-ttl{
+    padding-left: #{nth($side_pading_mid, 1)};
+    padding-top: 24px;
+    padding-bottom: 44px;
+    font-size: rem(36);
+    line-height: 0.98;
+    margin: 0;
+  }
+  &__ttl-link{
+    text-decoration: none;
+    color: #{nth($colors, 1)};
+    font-weight: 600;
+  }
+   /*ハンバーガーメニュー*/
+   &__menu-outerr{
+    width:72px;
+    height: 72px;
+    padding: 0;
+    display: block;
+    text-decoration: none;
+    appearance: none;
+    border: none;
+    cursor: pointer;
+    position:fixed;
+    right:16px;
+    bottom: 64px;
+    margin: 0;
+    z-index: 4;
+    background-color: #{nth($colors, 5)};
+    border-radius: 50%;
+    box-shadow: 8px 5px 10px #{nth($colors, 6)};
+    color: inherit;
+    &:hover{
+      opacity: 0.5;
+    }
+   }
+   &__menu-line{
+    width: 36px;
+    height: 2px;
+    position: absolute;
+    top: -10px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    background-color: #{nth($colors, 1)};
+    transition: .5s; 
+    &::before,&::after{
+      width: 100%;
+      height: 100%;    
+      position: absolute;
+      display: block;
+      content: '';
+      transition: .5s; 
+      background-color: #{nth($colors, 1)};
+    }
+    &::before{
+      top:  -10px;
+    }
+    &::after{
+      top: 10px;
+      width: 24px;
+    }
+   }
+   &__menu-outerr[aria-expanded="true"] &__menu-line{
+    background-color: transparent;
+    z-index: 1;
+   }
+   &__menu-outerr[aria-expanded="true"] &__menu-line::before,&__menu-outerr[aria-expanded="true"] &__menu-line::after{
+     top: 0;
+     background-color: #{nth($colors, 1)};
+   } 
+   &__menu-outerr[aria-expanded="true"] &__menu-line::before{
+    transform: rotate(45deg);
+   }
+   &__menu-outerr[aria-expanded="true"] &__menu-line::after{
+    transform: rotate(-45deg);
+    width: 36px;
+   }
+   &__menu-u-visuallyHidden{
+     position: absolute;
+     white-space: nowrap;
+     width: 1px;
+     height: 1px;
+     overflow: hidden;
+     border: 0;
+     padding: 0;
+     clip: rect(0 0 0 0);
+    clip-path: inset(50%); 
+      margin: -1px;
+   }
+   &__menu-txt{
+    font-size: rem(14);
+    margin-top: 38px;
+    display: block;
+   }
+  /*end ハンバーガーメニュー*/ 
+}
+.menu{
+  background-color: #{nth($colors, 4)};
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 0;
+  z-index: 3;
+  color: #{nth($colors, 5)};
+  text-align: center;
+  overflow: scroll;
+  transition: .5s;
+  &__list{
+    padding-left: 0;
+    padding-top: 80px;
+  }
+  &__list-item{
+    &:not(:first-child){
+      margin-top: 48px;
+    }
+  }
+  &__item-link{
+    color: inherit;
+    text-decoration: none;
+    &[aria-expanded="false"]{
+      visibility: hidden;
+    }
+  }
+  &__item-en{
+    font-size: rem(32);
+    margin: 0;
+    font-family: "source-sans-pro", "source-han-sans-japanese",sans-serif;
+    font-weight: 600;
+    display: block;
+  }
+  &__item-ja{
+    margin-top: 4px;
+    margin-bottom: 0;
+    display: block;
+  }
+  &__item-icon{
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 14px;
+    height: 7px;
+    display: block;
+  }
+  &.open{
+    height: 100vh; height: calc(var(--vh, 1vh) * 100);
+  }
+}
+//pcのみ
+@include mq(pc){
+}
+//タブレットスマホ
+@include mq(tab-sp){
+  .header{
+    &__menu-outerr{
+      bottom: auto;
+      right:24px;
+      top: 36px;
+    }
+  }
+}
+@include mq(tab-mid){
+  .header{
+    &__site-ttl{
+      padding-left: 5.866vw;
+      padding-top: 12px;
+      padding-bottom: 40px;
+      font-size: rem(28);
+    }
+    &__menu-outerr{
+      bottom: 72px;
+      right: 20px;
+      top: auto;
+    }
+  }
+}

@@ -1,0 +1,99 @@
+/*setting*/
+/*mixin*/
+/*base*/
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #FEFEFE;
+  color: #121F2C;
+  font-size: 1rem;
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  font-family: "source-sans-pro", "source-han-sans-japanese", "Helvetica Neue", Arial, "Hiragino Sans", "Meiryo", sans-serif;
+  font-weight: 400;
+  -webkit-font-feature-settings: "palt";
+          font-feature-settings: "palt";
+  letter-spacing: 0.125rem;
+  -webkit-animation: bodyFadeIn 2s ease-in 0s 1 normal;
+          animation: bodyFadeIn 2s ease-in 0s 1 normal;
+}
+
+@-webkit-keyframes bodyFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes bodyFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.not-js {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  padding: 8px 0;
+  color: #FEFEFE;
+  background-color: #CB4D35;
+  font-size: 1.25rem;
+  z-index: 10000;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "source-sans-pro", "source-han-sans-japanese", sans-serif;
+  font-weight: 600;
+}
+
+.responsive-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  vertical-align: top;
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+}
+
+a:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+a:focus:not(:focus-visible) {
+  outline: 0;
+}
+
+button:focus:not(:focus-visible) {
+  outline: 0;
+}
+
+img {
+  pointer-events: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-touch-callout: none;
+  -moz-user-select: none;
+  touch-callout: none;
+  -ms-user-select: none;
+      user-select: none;
+}
+
+/*module*/

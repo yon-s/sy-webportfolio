@@ -1,0 +1,247 @@
+.privacy{
+  background-color: #{nth($colors, 1)};
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-sizing: border-box;
+  opacity: 0;
+  z-index: 4;
+  visibility: hidden;
+  overflow: hidden;
+  transition: .5s;
+  overflow-y: scroll;
+  height: 100vh; height: calc(var(--vh, 1vh) * 100);
+  &.open{
+    visibility: visible;
+    opacity: 1;
+  }
+  $privacyInnerMaxwidth: 1160px; //.privacy__inner max-width
+  $privacyPaddingTop: 98px;//.privacy padding-top
+  padding: $privacyPaddingTop 7.613vw 108px;
+  &__inner{
+    background-color: #{nth($colors, 5)};
+    max-width: $privacyInnerMaxwidth;
+    margin: 0 auto;
+  }
+  &__close-outer{
+    width: 100%;
+    max-width: $privacyInnerMaxwidth;
+    position:fixed;
+    top: 0;
+    padding-top: $privacyPaddingTop;
+    transition: .5s; 
+    &.scroll-in{
+      padding-top: 0;
+      transition: .5s; 
+    }
+  }
+  &__content-group{
+    padding: 120px 110px 140px;
+  }
+  &__close-inner{
+    background-color: inherit;
+    position: relative;
+    width:32px;
+    height: 42px;
+    padding: 0;
+    cursor: pointer;
+    border: none;
+    margin-right:25px;
+    margin-top: 25px;
+    outline: 0;
+    z-index: 4;
+    float: right;
+    &:hover{
+      opacity: 0.5;
+    }
+  }
+  &__close-line{
+    width: 36px;
+    height: 2px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    background-color: #{nth($colors, 1)};
+    transition: .5s; 
+    transform: rotate(45deg);
+    &::before{
+      width: 100%;
+      height: 100%;    
+      position: absolute;
+      display: block;
+      content: '';
+      transition: .5s; 
+      background-color: #{nth($colors, 1)};
+      transform: rotate(-90deg);
+    }
+   } 
+   &__close-u-visuallyHidden{
+     position: absolute;
+     white-space: nowrap;
+     width: 1px;
+     height: 1px;
+     overflow: hidden;
+     border: 0;
+     padding: 0;
+     clip: rect(0 0 0 0);
+    clip-path: inset(50%); 
+      margin: -1px;
+   }
+   &__close-txt{
+    font-size: rem(14);
+    margin-top: 38px;
+    display: block;
+   }
+   &__section{
+    @include flex;
+    &:first-child{
+      margin-top: 80px;
+    }
+    &:not(:first-child){
+      margin-top: 56px;
+    }
+   }
+   &__ttl-group{
+    width: 294px;
+    background-color: #{nth($colors, 4)};    
+    color: #{nth($colors, 2)};
+    padding: 96px 16px 132px;
+   }
+   &__ttl{
+    margin: 0;
+    text-align: center;
+    line-height: 1.5;
+    letter-spacing: rem(3);
+    font-size: rem(24);
+   }
+   &__ttl-ubder{
+    background-color: #{nth($colors, 2)};
+    display: block;
+    width: 48px;
+    height: 4px;
+    margin: 32px auto 0;
+   }
+   &__txt{
+    margin-bottom: 0;
+    line-height: 1.75;
+    &:not(:first-child){
+      margin-top: 22px;
+    }
+   }
+   &__list{
+    margin-top: 22px;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style-type: circle;
+    list-style-position: inside;
+   }
+   &__list-item{
+    &:not(:first-child){
+     margin-top: 14px;
+    }
+   }
+}
+@include mq(pc){
+  .privacy{
+    &__txt-content{
+      margin-left: 32px;
+      width: calc(100% - 358px);
+    }
+  }
+}
+@include mq(tab-sp){
+  .privacy{
+    $privacyInnerMaxwidth:896px;
+    $privacyPaddingTop: 68px;//.privacy padding-top
+    padding: $privacyPaddingTop 6.25vw 86px;
+    &__inner{
+      max-width:$privacyInnerMaxwidth;
+    }
+    &__close-outer{
+      max-width: $privacyInnerMaxwidth;
+      padding-top: $privacyPaddingTop;
+    }
+    &__content-group{
+      padding: 48px 68px 72px;
+    }
+    &__section{
+      @include flex(0,center,0,0,1);
+      &:first-child{
+        margin-top: 60px;
+      }
+    }
+    &__ttl-group{
+      width: 260px;
+      padding: 54px 16px 64px;
+     }
+     &__ttl{
+      font-size: rem(22);
+     }
+     &__ttl-ubder{
+      background-color: #{nth($colors, 2)};
+      display: block;
+      width: 48px;
+      height: 4px;
+      margin: 32px auto 0;
+     }
+     &__txt-content{
+      margin-top: 20px;
+     }
+     &__txt{
+      &:first-child{
+        margin-top: 0;
+      }
+      &:not(:first-child){
+        margin-top: 20px;
+      }
+     }
+  }
+}
+@include mq(tab-mid){
+  .privacy{
+    $privacyInnerMaxwidth: 86.133vw; //.privacy__inner max-width
+    $privacyPaddingTop: 24px;//.privacy padding-top
+    padding: $privacyPaddingTop 5.333vw 54px;
+    &__inner{
+      width: $privacyInnerMaxwidth;
+    }
+    &__content-group{
+      padding: 120px 110px 140px;
+    }
+    &__close-outer{
+      width: $privacyInnerMaxwidth;
+      padding-top: $privacyPaddingTop;
+    }
+    &__content-group{
+      padding:72px  7.466vw 80px;
+    }
+    &__section{
+      &:first-child{
+        margin-top: 36px;
+      }
+      &:not(:first-child){
+        margin-top: 40px;
+      }
+    }
+    &__ttl-group{
+      width: 265px;
+      color: #{nth($colors, 2)};
+      padding: 64px 16px 68px;
+     }
+     &__ttl{
+      letter-spacing: rem(2);
+      font-size: inherit;
+     }
+  }
+}
+@include mq(sp-min){
+  .privacy{
+    &__ttl-group{
+      width: 100%;
+      box-sizing: border-box;
+    }
+  }
+}

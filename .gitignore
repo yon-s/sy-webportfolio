@@ -1,0 +1,23 @@
+# 「.htaccess」と「.htpasswd」など、.ht で始まるファイルを追跡しない
+.ht*
+*.log
+.docker
+.DS_Store
+.vscode
+*.code-workspace
+*.yml
+*.sh
+*.txt
+maintenance.php
+logs
+Search-Replace-DB-*
+wp-admin
+wp-includes
+wp-*.php
+**/*.php
+**/myportfolio/*.html
+**/wp-content/languages
+**/wp-content/uploads
+**/wp-content/upgrade
+**/wp-content/plugins
+!**/wp-content/themes/myportfolio/**

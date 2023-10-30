@@ -1,0 +1,75 @@
+html,body{
+  overflow-x: hidden;
+}
+body{
+  background-color: #{nth($colors, 5)};
+  color: #{nth($colors, 1)};
+  font-size: rem(16);
+  min-height: 100vh; 
+  min-height: calc(var(--vh, 1vh) * 100);
+  @include flex(0,0,0,0,1);
+  font-family: "source-sans-pro","source-han-sans-japanese",
+  "Helvetica Neue",
+    Arial,
+    "Hiragino Sans",
+    "Meiryo",
+    sans-serif;
+    font-weight: 400;
+    font-feature-settings: "palt";
+    letter-spacing: rem(2);
+    animation: bodyFadeIn 2s ease-in 0s 1 normal;
+}
+@keyframes bodyFadeIn {
+  0% {
+      opacity: 0
+  }
+  100% {
+      opacity: 1
+  }
+}
+.not-js{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  padding: 8px 0;
+  color: #{nth($colors, 5)};
+  background-color: #{nth($colors, 7)};
+  font-size: rem(20);
+  z-index: 10000;
+}
+h1,h2,h3,h4,h5,h6{
+  font-family: "source-sans-pro", "source-han-sans-japanese",sans-serif;
+  font-weight: 600;
+}
+.responsive-img{
+  width:100%;
+  height: auto;
+  display: block;
+  vertical-align: top;
+  transform-origin: top left;
+}
+a{
+  &:hover{
+    opacity: 0.5;
+    cursor: pointer;
+  }
+  &:focus:not(:focus-visible) {
+    outline: 0;
+  }
+}
+button{
+  &:focus:not(:focus-visible) {
+    outline: 0;
+  }
+}
+img{
+  pointer-events: none; 
+  -webkit-touch-callout:none;
+  -webkit-user-select:none;
+  -moz-touch-callout:none;
+  -moz-user-select:none;
+  touch-callout:none;
+  user-select:none;
+}

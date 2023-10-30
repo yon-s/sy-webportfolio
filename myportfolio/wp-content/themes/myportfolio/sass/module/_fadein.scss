@@ -1,0 +1,25 @@
+[data-fade-in="scroll"]{
+  opacity: 0;
+  transition-duration:2s;
+  transition-property:opacity,transform;
+  transition-timing-function: ease-in-out;
+  &.scroll-in{
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+.fade-in{
+  &--left {
+    transform: translate(-50%, 0);
+  }
+  &--right {
+    transform: translate(50%, 0);
+  }
+  &--down {
+    transform: translate(0, 100%);
+  }
+  &--up {
+    transform: translate(0, -100%);
+    
+  }
+}
