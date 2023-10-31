@@ -370,56 +370,71 @@ Template Name: TOPページ用
         <?php endforeach;?>       
         <section class="skill__study">
           <div class="skill__ttl-group--min" id="skill__ttl-study">
-            <h3 class="skill__ttl">実務未経験<br>・<br>勉強中</h3>
+            <h3 class="skill__ttl">学習状況</h3>
             <span class="skill__ttl-ubder"></span>
           </div>
           <ul class="skill__study-list">
             <?php $studyLists =[
               [
                 'name' => 'UNIXコマンド',
-                'txt' => '自身のサイト制作の作業やプログラミングの勉強で使用。実務未経験'
+                'dt' => 'ドットインストール',
+                'dd' => '自身のサイト制作の作業やプログラミングの勉強で使用中。'
               ],
               [
                 'name' => 'Lalavel',
-                'txt' => 'ドットインストールで学習済み。実務未経験'
+                'dt' => 'ドットインストール',
+                'dd' => 'ブログサイト制作を勉強済み'
               ],
               [
                 'name' => 'Vue.js',
-                'txt' => 'ドットインストールで学習済み。実務未経験'
+                'dt' => 'ドットインストール',
+                'dd' => 'todoアプリの制作を勉強済み'
               ],
               [
                 'name' => 'React',
-                'txt' => 'Udemyで学習済み、todoリストやブログ、PWA作成を勉強。実務未経験'
+                'dt' => 'Udemy',
+                'dd' => 'todoリストやブログ、PWA作成を勉強済み'
               ],
               [
                 'name' => 'Next.js',
-                'txt' => 'Udemyで学習済み、ブログの制作、SSR、SG、ISRを勉強。実務未経験'
+                'dt' => 'Udemy',
+                'dd' => 'ブログの制作、SSR、SG、ISRを勉強済み'
               ],
               [
                 'name' => 'TypeScript',
-                'txt' => 'Udemyで学習済み、Reactの型定義を勉強。実務未経験'
+                'dt' => 'Udemy',
+                'dd' => 'Reactの型定義を勉強済み'
               ],
               [
                 'name' => 'Ruby on Rails',
-                'txt' => 'プロゲートとMENTAで学習済み、ツイッター型SNSやReactのバックエンドで使用するAPIモードを勉強。実務未経験'
+                'dt' => 'プロゲートとMENTA',
+                'dd' => 'ツイッター型SNSやReactのバックエンドで使用するAPIモードを勉強済み'
               ],
               [
                 'name' => 'Vercel',
-                'txt' => 'Next.jsのデプロイを学習済み。実務未経験'
+                'dt' => 'Udemy',
+                'dd' => 'Next.jsのデプロイを学習済み。'
               ],
               [
                 'name' => 'AWS',
-                'txt' => 'APIモードのRuby on RailsとReactのデプロイを学習済み。実務未経験'
+                'dt' => 'MENTA',
+                'dd' => 'APIモードのRuby on RailsとReactのデプロイを学習済み'
               ],
               [
                 'name' => 'Firebase',
-                'txt' => 'PWAで作成したReactのtodoリストのバックエンドで学習済み。実務未経験'
+                'dt' => 'Udemy',
+                'dd' => 'PWAで作成したReactのtodoリストのバックエンドで学習済み'
               ],
             ]?>
             <?php foreach($studyLists as $studyList):?>
               <li class="skill__study-list-item">
                 <p class="skill__study-name"><?php echo $studyList['name']; ?></p>
-                <p class="skill__study-txt"><?php echo $studyList['txt']; ?></p>
+                <dl class="skill__study-txt">
+                  <dt class="skill__study-dt"><i class="fa-solid fa-square"></i>学習ツール</dt>
+                  <dd class="skill__study-dd"><?php echo $studyList['dt']; ?></dd>
+                  <dt class="skill__study-dt"><i class="fa-solid fa-square"></i>学習内容</dt>
+                  <dd class="skill__study-dd"><?php echo $studyList['dd']; ?></dd>
+                </dl>
               </li>
             <?php endforeach;?>
           </ul>  

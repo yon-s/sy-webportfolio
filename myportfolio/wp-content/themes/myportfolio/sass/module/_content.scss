@@ -535,8 +535,12 @@
    &__study-txt{
      margin-top: 8px;
      margin-bottom: 0;
-     font-size: (14);
+     font-size: rem(14);
      line-height: 1.36;
+     text-align: justify;
+   }
+   &__study-dd{
+    margin-left: 2em;
    }
 }
 .contact{

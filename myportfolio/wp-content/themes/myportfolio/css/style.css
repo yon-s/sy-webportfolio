@@ -898,8 +898,12 @@ img {
 .skill__study-txt {
   margin-top: 8px;
   margin-bottom: 0;
-  font-size: 14;
+  font-size: 0.875rem;
   line-height: 1.36;
+  text-align: justify;
+}
+.skill__study-dd {
+  margin-left: 2em;
 }
 
 .contact {
