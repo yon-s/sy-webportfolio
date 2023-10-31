@@ -2839,7 +2839,7 @@ img {
   .detail__ttl-txt {
     width: 192px;
     margin: 48px auto 0;
-    text-align: left;
+    text-align: justify;
   }
   .detail__work-outer {
     margin-left: -5.33vw;
