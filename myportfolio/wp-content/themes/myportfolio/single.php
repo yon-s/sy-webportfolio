@@ -348,7 +348,7 @@ function deviceName($mockupKey){
               <div class="detail__ttl-group" >
                 <h3 class="detail__ttl">サイトキャプチャ</h3>
                 <span class="detail__ttl-ubder"></span>
-                <p class="detail__ttl-txt"><small class="detail__ttl-caution">サイトにより、右の画像は一部しか表示されていないものがあります。正しい表示はリンク先でご確認下さい。</small></p>
+                <p class="detail__ttl-txt"><small class="detail__ttl-caution">サイトにより、右の画像は一部しか表示されていないものがあります。<br>正しい表示はリンク先でご確認下さい。</small></p>
               </div>
               <div class="detail__work-outer">
                 <div class="detail__txt-outer">
