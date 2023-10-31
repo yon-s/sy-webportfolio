@@ -1,15 +1,24 @@
 import { toBoolean } from './toBoolean.js';
-export const fadeInAdd = (FadeInItem, FadeInItemLeft, FadeInItemRight, FadeInItemDown, FadeInItemUp,FadeInFast) => {// (Item to add a class when scrolled, Items fading in from left to right, Items fading in from right to left, Items fading in from down to up, Items fading in from up to down)
+const dataScrollInHalfFast = 'half-fast';//コンテンツサイズ1/4分早くfadeinするdata-scroll-inの値
+const dataScrollInfast = 'fast';//コンテンツサイズ分早くfadeinするdata-scroll-inの値
+export const fadeInAdd = (FadeInItem, FadeInItemLeft, FadeInItemRight, FadeInItemDown, FadeInItemUp,FadeInFast,FadeInHalfFast) => {// (Item to add a class when scrolled, Items fading in from left to right, Items fading in from right to left, Items fading in from down to up, Items fading in from up to down)
   //FadeInItem with data attribute
   for (let i = 0; i < FadeInItem.length; i++){
     if(!FadeInItem[i].dataset.fadeIn !== 'scroll'){//Added data-fade-in="scroll" to FadeInItem
       FadeInItem[i].dataset.fadeIn = 'scroll';
     }
   }
+  if(FadeInHalfFast){
+    for (let i = 0; i < FadeInHalfFast.length; i++){
+      if(!FadeInHalfFast[i].dataset.scrollIn !== dataScrollInHalfFast){//Added data-fade-in="scroll" to FadeInHalfFast
+        FadeInHalfFast[i].dataset.scrollIn = dataScrollInHalfFast;
+      }
+    }
+  }
   if(FadeInFast){
     for (let i = 0; i < FadeInFast.length; i++){
-      if(!FadeInFast[i].dataset.scrollIn !== 'fast'){//Added data-fade-in="scroll" to FadeInFast
-        FadeInFast[i].dataset.scrollIn = 'fast';
+      if(!FadeInFast[i].dataset.scrollIn !== dataScrollInfast){//Added data-fade-in="scroll" to FadeInFast
+        FadeInFast[i].dataset.scrollIn = dataScrollInfast;
       }
     }
   }
@@ -66,7 +75,10 @@ export const fadeIn = (fadeInTarget, scrolls, changingPositions, addClassItems, 
       }
     }
     const targetScrollIn = fadeInTarget[i].dataset.scrollIn;
-    if(targetScrollIn === 'fast'){
+    if(targetScrollIn === dataScrollInHalfFast){
+      changingPositionPlus = -fadeInTargetHeight / 4;
+    }
+    if(targetScrollIn === dataScrollInfast){
       changingPositionPlus = -fadeInTargetHeight;
     }
     if (scroll > offset - relativeHeight + changingPosition + changingPositionPlus) {// If the scroll volume exceeds

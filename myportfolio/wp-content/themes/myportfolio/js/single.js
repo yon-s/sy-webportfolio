@@ -11,9 +11,10 @@ import { fadeInAdd, callFadeIn } from './fadeIn.js';
   //Elements fading in from the top
   const FadeInItemUp = ['.detail__ttl-group'];
   //Items that fade quickly
+  const FadeInHalfFast = document.querySelectorAll([ '.detail__ttl-group','.detail__box:first-child .detail__work-outer']);
   const FadeInFast = document.querySelectorAll([ '.detail__box:nth-child(2) .detail__work-outer']);
 
-  fadeInAdd(FadeInItem, FadeInItemLeft, FadeInItemRight, FadeInItemDown, FadeInItemUp,FadeInFast);
+  fadeInAdd(FadeInItem, FadeInItemLeft, FadeInItemRight, FadeInItemDown, FadeInItemUp,FadeInFast,FadeInHalfFast);
   
   callFadeIn();
 //end scroll fadein 
