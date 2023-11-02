@@ -425,6 +425,11 @@ Template Name: TOPページ用
                 'dt' => 'Udemy',
                 'dd' => 'PWAで作成したReactのtodoリストのバックエンドで学習済み'
               ],
+              [
+                'name' => 'データベース論理設計',
+                'dt' => 'Udemy',
+                'dd' => '3層スキーマー,正規化、ER図リレーション、ER図IE表記法、sqlを学習済み'
+              ],
             ]?>
             <?php foreach($studyLists as $studyList):?>
               <li class="skill__study-list-item">
