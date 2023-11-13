@@ -194,6 +194,9 @@ function deviceName($mockupKey){
                     case 'nextjs':
                         echo 'Next.js';
                         break;
+                    case 'tailwindcss':
+                        echo 'Tailwind CSS';
+                        break;
                   }
                 }
                 ?>
