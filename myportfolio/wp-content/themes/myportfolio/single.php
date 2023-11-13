@@ -185,6 +185,9 @@ function deviceName($mockupKey){
                     case 'javascript':
                         echo 'JavaScript';
                         break;
+                    case 'typescript':
+                        echo 'TypeScript';
+                        break;
                     case 'rails':
                         echo 'Ruby on Rails';
                         break;
