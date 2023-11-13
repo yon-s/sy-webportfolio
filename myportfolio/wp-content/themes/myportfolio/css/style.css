@@ -1548,7 +1548,7 @@ img {
   width: 38px;
   margin-right: 12px;
 }
-.info__soft-icon--php {
+.info__soft-icon--large {
   width: 60px;
   margin-right: 12px;
 }
@@ -2807,7 +2807,7 @@ img {
   .info__soft-icon {
     width: 32px;
   }
-  .info__soft-icon--php {
+  .info__soft-icon--large {
     width: 51px;
     margin-right: 12px;
   }

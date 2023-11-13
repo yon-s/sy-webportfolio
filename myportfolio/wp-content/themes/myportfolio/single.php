@@ -3,9 +3,9 @@ global $work,$taxonomyCatWork,$taxonomyTagWork;
 //category
 $cat = get_the_terms($post->ID,$taxonomyCatWork);
 if($cat){  
-	$cat_name = $cat[0]->name;
+  $cat_name = $cat[0]->name;
   $cat_slug = $cat[0]->slug;
-	$cat_link = get_term_link($cat_slug,$taxonomyCatWork);
+  $cat_link = get_term_link($cat_slug,$taxonomyCatWork);
 }
 //tag
 $tagsTerms = get_the_terms($post->ID,$taxonomyTagWork);
@@ -185,6 +185,12 @@ function deviceName($mockupKey){
                     case 'javascript':
                         echo 'JavaScript';
                         break;
+                    case 'rails':
+                        echo 'Ruby on Rails';
+                        break;
+                    case 'nextjs':
+                        echo 'Next.js';
+                        break;
                   }
                 }
                 ?>
@@ -272,12 +278,12 @@ function deviceName($mockupKey){
                 <?php if($working_languages):?>
                   <div class="info__box-outer">
                     <div class="info__box">
-                      <h3 class="info__ttl">使用言語・ライブラリー</h3>
+                      <h3 class="info__ttl">使用言語・ライブラリー・フレームワーク</h3>
                       <div class="info__content">
                         <ul class="info__list-col">
                           <?php foreach($working_languages as $working_language):?>
                             <li class="info__item-icon">
-                              <div class="info__soft-icon<?php if($working_language === 'php'){echo '--'.$working_language;}?>">
+                              <div class="info__soft-icon<?php if($working_language === 'php' || $working_language === 'rails'  || $working_language === 'nextjs'){echo '--large';}?>">
                                 <picture>
                                   <source media="(max-width: 1023px)" srcset="<?php echo get_template_directory_uri()?>/img/work/info_soft_<?php echo $working_language;?>_1023.png, <?php echo get_template_directory_uri()?>/img/work/info_soft_<?php echo $working_language;?>_1023@2x.png 2x, <?php echo get_template_directory_uri()?>/img/work/info_soft_<?php echo $working_language;?>_1023@3x.png 3x">
                                   <img srcset="<?php echo get_template_directory_uri()?>/img/work/info_soft_<?php echo $working_language;?>.png, <?php echo get_template_directory_uri()?>/img/work/info_soft_<?php echo $working_language;?>@2x.png 2x, <?php echo get_template_directory_uri()?>/img/work/info_soft_<?php echo $working_language;?>@3x.png 3x" src="<?php echo get_template_directory_uri()?>/img/work/info_soft_<?php echo $working_language;?>.png" alt="<?php softName($working_language).'のアイコン';?>" class="responsive-img"/>
@@ -467,3 +473,4 @@ function deviceName($mockupKey){
   </main>  
 </div>
 <?php get_footer(); ?>
+
