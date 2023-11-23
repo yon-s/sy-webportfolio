@@ -16,7 +16,7 @@ if($catTerms){
 <article class="loop__list-item">
   <div class="loop__top">     
   <p class="loop__time"><?php the_time('Y/m/d'); ?></p>
-  <?php if(get_the_category()): ?>
+  <?php if($catTerms||get_the_category()): ?>
         <div class="loop__tag-item"><a href="<?php echo $cat_link;?>" class="loop__cat-link"><?php echo $cat_name;?></a></div><!-- end-tag-->
   <?php endif;?>       
   </div>

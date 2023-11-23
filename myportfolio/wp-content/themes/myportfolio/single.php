@@ -44,6 +44,7 @@ function deviceName($mockupKey){
                 <?php
                 $mockupFieldKeys = customFieldWeb($mockupField)['mockupFieldKeys'];
                 $deviceNames = customFieldWeb($mockupField)['deviceNames'];
+                
                 ?>
                 <?php
                 //デバイスアイコン部分 

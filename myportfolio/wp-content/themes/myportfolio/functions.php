@@ -1254,6 +1254,7 @@ function postCat($postID,$taxonomy){
 }
 // ループ用カテゴリー一覧
 function loop_query($postType='post',$numberOfPosts,$orderby=null,$catSlug=null,$taxonomy=null,$field=null,$terms=null){ 
+	global $post;
 	$paged = get_query_var('paged') ? get_query_var('paged') : 1;
 	$loop_query_condi = array(
 		'post_type' => $postType,
@@ -1262,6 +1263,7 @@ function loop_query($postType='post',$numberOfPosts,$orderby=null,$catSlug=null,
 		'category_name' => $catSlug,
 		'posts_per_page' => $numberOfPosts,
 		'paged' => $paged,
+		'post__not_in' => array($post->ID),
 		'tax_query' => array(                      //タクソノミーに関する指定はこの中にすべて
 			array(
 				'taxonomy' => $taxonomy,
@@ -1735,4 +1737,73 @@ function addRewriteRules($rules){
 	);
 	return $newRules + $rules;
 }
+//サイト内検索の設定
+function filter_search($query)
+{
+	global $work;
+  if ($query->is_search() && $query->is_main_query() && !is_admin()) {
+
+    // 検索に含めるもの(記事、ページ、カスタム投稿)
+    $post_array = array('post', 'page', $work);
+
+    // 検索に含めたくないもの（例えばお問い合わせの確認、完了画面とか）
+    $page_ID_contact_confirm = get_page_by_path('contact/confirm')->ID;
+    $page_ID_contact_completion = get_page_by_path('contact/completion')->ID;
+
+    $not_in_array = array($page_ID_contact_confirm,$page_ID_contact_completion);
+
+    $query->set('post_type', $post_array);
+    $query->set('post__not_in', $not_in_array);
+  }
+}
+add_filter('pre_get_posts', 'filter_search');
+
+
+// 検索
+function custom_search($search, $wp_query)
+{
+  global $wpdb;
+	
+  if (!$wp_query->is_search) return $search;
+  if (!isset($wp_query->query_vars)) return $search;
+
+  $search_words = explode(' ', isset($wp_query->query_vars['s']) ? $wp_query->query_vars['s'] : '');
+  if (count($search_words) > 0) {
+    $search = '';
+
+    foreach ($search_words as $word) {
+      if (!empty($word)) {
+        $search_word = '%' . esc_sql($word) . '%';
+        $search .= " AND (
+          {$wpdb->posts}.post_title LIKE '{$search_word}'
+          OR {$wpdb->posts}.post_content LIKE '{$search_word}'
+          OR {$wpdb->posts}.ID IN (
+             SELECT distinct r.object_id
+             FROM {$wpdb->term_relationships} AS r
+             INNER JOIN {$wpdb->term_taxonomy} AS tt ON r.term_taxonomy_id = tt.term_taxonomy_id
+             INNER JOIN {$wpdb->terms} AS t ON tt.term_id = t.term_id
+             WHERE t.name LIKE '{$search_word}'
+             OR t.slug LIKE '{$search_word}'
+             OR tt.description LIKE '{$search_word}'
+            )
+         OR {$wpdb->posts}.ID IN (
+            SELECT distinct post_id
+            FROM {$wpdb->postmeta}
+            WHERE {$wpdb->postmeta}.meta_key IN ('カスタムフィールド１','カスタムフィールド２') AND meta_value LIKE '{$search_word}'
+            )
+         )";
+
+        // 最初     タイトルにキーワードが含まれているかどうか
+        // 1番目OR  コンテンツにキーワードが含まれているかどうか
+        // 2番目OR  タグ、カテゴリー、タームにキーワードが含まれているかどうか
+                // →   post.ID に紐づけられている term_relationships と紐づけられている terms, term_taxonomy の terms.name, terms.slug, term_taxonomy.description に検索キーワードがあるかどうか
+        // 3番目OR  カスタムフィールドにキーワードが含まれているかどうか
+                // →   post.ID に紐づけられている postmeta の meta_key が指定のカスタムフィールドである meta_value に検索キーワードがあるかどうか
+
+      }
+    }
+  }
+  return $search;
+}
+add_filter('posts_search', 'custom_search', 10, 2);
 ?>
