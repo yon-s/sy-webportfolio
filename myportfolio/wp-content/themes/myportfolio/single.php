@@ -44,6 +44,7 @@ function deviceName($mockupKey){
                 <?php
                 $mockupFieldKeys = customFieldWeb($mockupField)['mockupFieldKeys'];
                 $deviceNames = customFieldWeb($mockupField)['deviceNames'];
+                
                 ?>
                 <?php
                 //デバイスアイコン部分 
@@ -193,6 +194,9 @@ function deviceName($mockupKey){
                         break;
                     case 'nextjs':
                         echo 'Next.js';
+                        break;
+                    case 'tailwindcss':
+                        echo 'Tailwind CSS';
                         break;
                   }
                 }
