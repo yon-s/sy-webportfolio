@@ -435,6 +435,11 @@ Template Name: TOPページ用
                 'dt' => 'プロゲート',
                 'dd' => 'ブログアプリの作成を学習済み。データベースMySQL'
               ],
+              [
+                'name' => 'CI/GitHub Actions',
+                'dt' => 'MENTA',
+                'dd' => ' JestによるTypeScriptのテスト自動化とブランチ保護を経験済み'
+              ],
             ]?>
             <?php foreach($studyLists as $studyList):?>
               <li class="skill__study-list-item">
