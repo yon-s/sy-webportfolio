@@ -418,7 +418,7 @@ Template Name: TOPページ用
               [
                 'name' => 'AWS',
                 'dt' => 'MENTA',
-                'dd' => 'APIモードのRuby on RailsとReactのデプロイを学習済み'
+                'dd' => 'APIモードのRuby on RailsとReactのデプロイを学習済み(ECS・ECR・CloudFront・S3・RDS・Amplify・ALB・Route 53)'
               ],
               [
                 'name' => 'Firebase',
@@ -429,6 +429,11 @@ Template Name: TOPページ用
                 'name' => 'データベース論理設計',
                 'dt' => 'Udemy',
                 'dd' => '3層スキーマー,正規化、ER図リレーション、ER図IE表記法、sqlを学習済み'
+              ],
+              [
+                'name' => 'Node.js',
+                'dt' => 'プロゲート',
+                'dd' => 'ブログアプリの作成を学習済み。データベースMySQL'
               ],
             ]?>
             <?php foreach($studyLists as $studyList):?>
