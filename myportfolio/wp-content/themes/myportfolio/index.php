@@ -242,7 +242,7 @@ Template Name: TOPページ用
               [
                 'img' => 'vscode.png',
                 'name' => 'Visual Studio Code',
-                'career' => [['ym' => 4 , 'date' => 'ヶ月']],
+                'career' => [['ym' => 3 , 'date' => '年']],
                 'txt' => 'HTML、CSS、Sass、PHPファイルの作成及び、編集、Gitでの使用'
               ],
               [
@@ -260,19 +260,19 @@ Template Name: TOPページ用
               [
                 'img' => 'xd.png',
                 'name' => 'XD',
-                'career' => [['ym' => 8 , 'date' => 'ヶ月']],
+                'career' => [['ym' => 3 , 'date' => '年']],
                 'txt' => 'サイトカンプ制作で使用'
               ],
               [
                 'img' => 'github.png',
                 'name' => 'Github',
-                'career' => [['ym' => 3 , 'date' => 'ヶ月']],
+                'career' => [['ym' => 2 , 'date' => '年']],
                 'txt' => 'バージョン管理としての使用'
               ],
               [
                 'img' => 'wordpress.png',
                 'name' => 'WordPress',
-                'career' => [['ym' => 3 , 'date' => '年']],
+                'career' => [['ym' => 5 , 'date' => '年']],
                 'txt' => 'オリジナルテーマ作成、動的なサイトを構築'
               ]
             ]
@@ -284,19 +284,19 @@ Template Name: TOPページ用
               [
                 'img' => 'analytics.png',
                 'name' => 'Google Analytics',
-                'career' => [['ym' => 2 , 'date' => '年']],
+                'career' => [['ym' => 3 , 'date' => '年']],
                 'txt' => 'サイト解析、改善ルーツとして使用'
               ],
               [
                 'img' => 'search_console.png',
                 'name' => 'Google Search Console',
-                'career' => [['ym' => 4 , 'date' => 'ヶ月']],
+                'career' => [['ym' => 2 , 'date' => '年']],
                 'txt' => 'インデックス登録、検索ワード、解析で使用'
               ],
               [
                 'img' => 'adSense.png',
                 'name' => 'Google AdSense',
-                'career' => [['ym' => 10 , 'date' => 'ヶ月']],
+                'career' => [['ym' => 2 , 'date' => '年']],
                 'txt' => '広告ユニットの作成及び設置'
               ],
             ]
@@ -308,25 +308,25 @@ Template Name: TOPページ用
               [
                 'img' => 'html_css.png',
                 'name' => 'HTML&CSS',
-                'career' => [['ym' => 6 , 'date' => '年']],
+                'career' => [['ym' => 7 , 'date' => '年']],
                 'txt' => 'Emmetによるマークアップ及び、スタイリング'
               ],
               [
                 'img' => 'scss.png',
                 'name' => 'SCSS',
-                'career' => [['ym' => 3 , 'date' => 'ヶ月']],
+                'career' => [['ym' => 2 , 'date' => '年']],
                 'txt' => '演算や変数を使用した自作関数制作'
               ],
               [
                 'img' => 'php.png',
                 'name' => 'php',
-                'career' => [['ym' => 8 , 'date' => 'ヶ月']],
+                'career' => [['ym' => 1 , 'date' => '年']],
                 'txt' => 'ループ表示、型や文字変換、取得、データによる表示の切り替え、WordPressのテンプレートファイル制作'
               ],
               [
                 'img' => 'javascript.png',
                 'name' => 'JavaScript',
-                'career' => [['ym' => 1 , 'date' => '年']],
+                'career' => [['ym' => 2 , 'date' => '年']],
                 'txt' => 'ハンバーガーメニューやスライド、スクロールアニメーションで使用'
               ],
             ]
