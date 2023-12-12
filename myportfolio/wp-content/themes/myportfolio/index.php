@@ -438,7 +438,12 @@ Template Name: TOPページ用
               [
                 'name' => 'CI/GitHub Actions',
                 'dt' => 'MENTA',
-                'dd' => ' JestによるTypeScriptのテスト自動化とブランチ保護を経験済み'
+                'dd' => 'JestによるTypeScriptのテスト自動化とブランチ保護を経験済み'
+              ],
+              [
+                'name' => 'Docker',
+                'dt' => 'Udemy',
+                'dd' => 'コンテナ・イメージ・Docker Composeの基礎とそれを使った開発環境の作成、ReactとspringbootのCI/CDを勉強済み'
               ],
             ]?>
             <?php foreach($studyLists as $studyList):?>
